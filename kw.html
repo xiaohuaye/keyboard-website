@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/kw.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div id="wrap">
+
+        </div>
+    </main>
+</body>
+<script>
+    // 声明数组
+    keys = {
+        0:{0:'1',1:'2',2: '3',3:'4',4:'5',5:'6',6:'7',7:'8',8:'9',9:'0',length:10},
+        1:{0:'q',1:'w',2: 'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',length:10},
+        2:{0:'a',1:'s',2: 'd',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',length:9},
+        3:{0:'z',1:'x',2: 'c',3:'v',4:'b',5:'n',6:'m',length:7},
+        length: 4
+    }
+    hash = {
+        0: 'qq.com',
+        1: 'badiu.com',
+        2: 'lol.com',
+        q: 'q.com',
+        w: 'war.com',
+        a: 'a.com',
+        s: 'solid.com',
+        z: 'zone.com',
+        x: 'sougu.com',
+        length: 9
+    }
+    // 防止更新后数据重置
+     var hashInLocalstorage = JSON.parse(localStorage.getItem('jjj')||'null')
+     if (hashInLocalstorage){
+         hash = hashInLocalstorage
+     }
+
+    // 生成标签
+    index = 0
+    while(index < keys['length']){ //0 1 2 3
+    div1 = document.createElement('div')
+        rows = keys[index]
+        index1 = 0
+        while(index1 < rows['length']){ //第一个数组 第二个数组 第三个数组 第四个数组
+        kbd1 = document.createElement('kbd')
+        kbd1.textContent = rows[index1]
+        button1 = document.createElement('button')
+        button1.id = rows[index1]
+         // 按钮设置
+        document.onclick = function(pressclick){
+            zzz = (pressclick['target']['id'])
+            web = prompt('give me a website')
+            hash[zzz] = web
+            localStorage.setItem('jjj',JSON.stringify(hash))
+        }
+     
+        kbd1.appendChild(button1)
+        button1.textContent = '编辑'
+        div1.appendChild(kbd1)
+        index1 = index1+1    
+        }
+    wrap.appendChild(div1)
+    index = index +1
+    } 
+    // 键盘导航设置  
+    document.onkeypress=function(presskey){
+        key1 = presskey['key']
+        website = hash[key1]
+        console.log(website)
+        // location.href = 'http://'+ website
+        window.open('http://'+website,'_blank')
+    }
+</script>
+</html>

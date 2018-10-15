@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    text-align: center;
+}
+#wrap{
+    display: inline-block;
+}
+#wrap kbd{
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    border: 1px solid red;
+    text-transform: uppercase;
+    position: relative;
+}
+#wrap button{
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#wrap kbd:hover button{
+    display: inline-block;
+}
