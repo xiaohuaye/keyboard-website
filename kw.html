@@ -17,14 +17,15 @@
 <script>
     // 声明数组
     keys = {
-        0:{0:'1',1:'2',2: '3',3:'4',4:'5',5:'6',6:'7',7:'8',8:'9',9:'0',length:10},
-        1:{0:'q',1:'w',2: 'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',length:10},
-        2:{0:'a',1:'s',2: 'd',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',length:9},
-        3:{0:'z',1:'x',2: 'c',3:'v',4:'b',5:'n',6:'m',length:7},
-        length: 4
+        0:{0:'`',1:'1',2: '2',3:'3',4:'4',5:'5',6:'6',7:'7',8:'8',9:'9',10:'0',11:'-',12:'=',13:'Backspace',length:14},
+        1:{0:'Tab',1:'q',2: 'w',3:'e',4:'r',5:'t',6:'y',7:'u',8:'i',9:'o',10:'p',11:'[',12:']',13:'\\',length:14},
+        2:{0:'CapsLock',1:'a',2: 's',3:'d',4:'f',5:'g',6:'h',7:'j',8:'k',9:'l',10:';',11:'\'',12:'Enter',length:13},
+        3:{0:'Shift',1:'z',2: 'x',3:'c',4:'v',5:'b',6:'n',7:'m',8:',',9:'.',10:'/',11:'Shift',length:12},
+        4:{0:'Ctrl',1:'Fn',2:'Alt',3:'Windows',4:'Space',5:'Windows',6:'Alt',7:'Ctrl',length:8},        
+        length: 5
     }
     hash = {
-        0: 'qq.com',
+        0: 'weibo.com',
         1: 'badiu.com',
         2: 'lol.com',
         q: 'q.com',
@@ -50,17 +51,27 @@
         while(index1 < rows['length']){ //第一个数组 第二个数组 第三个数组 第四个数组
         kbd1 = document.createElement('kbd')
         kbd1.textContent = rows[index1]
+        kbd1.id = rows[index1]+'1'//区别button of id
         button1 = document.createElement('button')
+        Image = document.createElement('img')
+        if(hash[rows[index1]]){
+            Image.src ='http://' + hash[rows[index1]] + '/favicon.ico'
+        }else{
+            Image.src = 'https://jianshu-1257772833.cos.ap-chengdu.myqcloud.com/laugh.jpg'
+        }
         button1.id = rows[index1]
+        button1.className = "button"
          // 按钮设置
-        document.onclick = function(pressclick){
+            button1.onclick = function(pressclick){
             zzz = (pressclick['target']['id'])
+            console.log(zzz)
             web = prompt('give me a website')
             hash[zzz] = web
             localStorage.setItem('jjj',JSON.stringify(hash))
         }
      
         kbd1.appendChild(button1)
+        kbd1.appendChild(Image)
         button1.textContent = '编辑'
         div1.appendChild(kbd1)
         index1 = index1+1    
@@ -71,8 +82,8 @@
     // 键盘导航设置  
     document.onkeypress=function(presskey){
         key1 = presskey['key']
+        console.log(key1)
         website = hash[key1]
-        console.log(website)
         // location.href = 'http://'+ website
         window.open('http://'+website,'_blank')
     }

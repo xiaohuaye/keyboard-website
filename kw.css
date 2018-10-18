@@ -2,26 +2,82 @@
     margin: 0;
     padding: 0;
 }
+body{
+    min-width: 1366px;
+    height: 100vh;
+    background: url(./img/night.gif) center center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px ;
+    color: white;
+}
 main{
     text-align: center;
+    margin-left: 77px;
+    margin-right: 77px;
 }
 #wrap{
     display: inline-block;
 }
 #wrap kbd{
     display: inline-block;
-    width: 4em;
-    height: 4em;
-    border: 1px solid red;
-    text-transform: uppercase;
+    width: 58px;
+    height: 67px;
+    border-radius: 8px;
+    margin: 6px;
     position: relative;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding-left: 10px;
+    padding-top: 3px;
+    text-align: left;
+    box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.75);
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%,  rgba(255,255,255,0.1) 100%);
+    text-transform: capitalize;
+    overflow: hidden;
 }
 #wrap button{
     display: none;
     position: absolute;
-    left: 0;
+    right: 0;
     bottom: 0;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
 }
 #wrap kbd:hover button{
     display: inline-block;
+}
+#wrap kbd:hover #Tab{display: none;}#wrap kbd:hover #CapsLock{display: none;}#wrap kbd:hover #Shift{display: none;}#wrap kbd:hover #Backspace{display: none;}#wrap kbd:hover #Enter{display: none;}#wrap kbd:hover #Alt{display: none;}#wrap kbd:hover #Fn{display: none;}#wrap kbd:hover #Windows{display: none;}#wrap kbd:hover #Ctrl{display: none;}
+/* 功能键不显示button */
+#CapsLock1{
+    padding-right: 68px;
+}
+#Enter1{
+    padding-right: 62px;
+
+}
+#Backspace1{
+    padding-right: 49px;
+}
+#Tab1{
+    padding-right: 51px;
+}
+#Shift1{
+    padding-right: 105px;
+}
+#Space1{
+    padding-right: 450px;
+}
+#Windows1{
+    padding-right: 38px;
+}
+#wrap kbd>img{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 8px;;
+    bottom: 4px;
+    border-radius: 2px;
 }
