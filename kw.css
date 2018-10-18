@@ -50,7 +50,8 @@ main{
     display: inline-block;
 }
 #wrap kbd:hover #Tab{display: none;}#wrap kbd:hover #CapsLock{display: none;}#wrap kbd:hover #Shift{display: none;}#wrap kbd:hover #Backspace{display: none;}#wrap kbd:hover #Enter{display: none;}#wrap kbd:hover #Alt{display: none;}#wrap kbd:hover #Fn{display: none;}#wrap kbd:hover #Windows{display: none;}#wrap kbd:hover #Ctrl{display: none;}
-/* 功能键不显示button */
+#Tab1 img{display: none;}#CapsLock1 img{display: none;}#Shift1 img{display: none;}#Backspace1 img{display: none;}#Enter1 img{display: none;}#Alt1 img{display: none;}#Fn1 img{display: none;}#Windows1 img{display: none;}#Ctrl1 img{display: none;}
+/* 功能键不显示button和图标 */
 #CapsLock1{
     padding-right: 68px;
 }
