@@ -3,28 +3,26 @@
     padding: 0;
 }
 body{
-    min-width: 1366px;
+    min-width: 1200px;
     height: 100vh;
     background: url(./img/night.gif) center center no-repeat;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px ;
+    font-size: 16px ;
     color: white;
 }
 main{
     text-align: center;
-    margin-left: 77px;
-    margin-right: 77px;
 }
 #wrap{
     display: inline-block;
 }
 #wrap kbd{
     display: inline-block;
-    width: 58px;
-    height: 67px;
+    width: 45px;
+    height: 50px;
     border-radius: 8px;
     margin: 6px;
     position: relative;
@@ -53,26 +51,26 @@ main{
 #Tab1 img{display: none;}#CapsLock1 img{display: none;}#Shift1 img{display: none;}#Backspace1 img{display: none;}#Enter1 img{display: none;}#Alt1 img{display: none;}#Fn1 img{display: none;}#Windows1 img{display: none;}#Ctrl1 img{display: none;}
 /* 功能键不显示button和图标 */
 #CapsLock1{
-    padding-right: 68px;
+    padding-right: 5.3%;
 }
 #Enter1{
-    padding-right: 62px;
+    padding-right: 6%;
 
 }
 #Backspace1{
     padding-right: 49px;
 }
 #Tab1{
-    padding-right: 51px;
+    padding-right: 4.6%;
 }
 #Shift1{
-    padding-right: 105px;
+    padding-right: 9.1%;
 }
 #Space1{
-    padding-right: 450px;
+    padding-right: 37.1%;
 }
 #Windows1{
-    padding-right: 38px;
+    padding-right: 4%;
 }
 #wrap kbd>img{
     width: 16px;
